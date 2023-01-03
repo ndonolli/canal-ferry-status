@@ -1,4 +1,4 @@
-const isRunning = (text) => {
+function isRunning(text) {
   text = text.toLowerCase();
   // it's running
   if (text.includes('resumed') || text.includes('begun')) {
@@ -11,9 +11,9 @@ const isRunning = (text) => {
 
   // don't know, assume it is not
   return false;
-};
+}
 
-const render = (text) => {
+function render(text) {
   const isRunning = isRunning(text);
   const status = document.getElementById('status');
   const tweet = document.getElementById('tweet');
@@ -26,7 +26,7 @@ const render = (text) => {
 
   status.innerHTML = `<h1>${msg}</h1>`;
   tweet.innerHTML = `<p>${text}</p>`;
-};
+}
 
 fetch('https://canal-ferry-status.netlify.app/.netlify/functions/api')
   .then((response) => response.json())
