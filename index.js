@@ -3,9 +3,9 @@ function getRunningStatusFromText(text) {
   // it's running
   if (text.includes('resumed') || text.includes('begun')) {
     return true;
-
-    // it's not
-  } else if (text.includes('condluded') || text.includes('out of service')) {
+  }
+  // it's not
+  else if (text.includes('condluded') || text.includes('out of service')) {
     return false;
   }
 

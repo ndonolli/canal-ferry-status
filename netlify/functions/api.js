@@ -1,7 +1,4 @@
-const fetch = require('node-fetch');
 const twitter = require('twitter-api-sdk');
-
-const API_ENDPOINT = 'https://api.twitter.com/2/users/43169410/tweets';
 
 exports.handler = async (event, context) => {
   let response;
