@@ -10,6 +10,6 @@ fetch('https://canal-ferry-status.netlify.app/.netlify/functions/api')
   .then((response) => {
     const tweets = response.data.data;
     const latestTweet = tweets[0];
-    render(latestTweet);
+    render(latestTweet.text);
   })
   .catch(console.log);
