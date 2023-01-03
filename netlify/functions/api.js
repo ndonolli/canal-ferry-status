@@ -5,7 +5,7 @@ const API_ENDPOINT = 'https://api.twitter.com/2/users/43169410/tweets';
 
 exports.handler = async (event, context) => {
   let response;
-  const client = new twitter.Client(process.env.BEARER_TOKEN);
+  const client = new twitter.Client(process.env.TOKEN);
   try {
     const response = await client.tweets.usersIdTweets('43169410');
     // handle response

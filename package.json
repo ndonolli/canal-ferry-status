@@ -4,11 +4,5 @@
   "private": true,
   "dependencies": {
     "twitter-api-sdk": "^1.2.1"
-  },
-  "devDependencies": {
-    "netlify-cli": "^12.5.0"
-  },
-  "scripts": {
-    "start": "netlify functions:serve"
   }
 }
