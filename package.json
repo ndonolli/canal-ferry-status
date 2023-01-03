@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "netlify-cli": "^12.5.0",
     "twitter-api-sdk": "^1.2.1"
+  },
+  "scripts": {
+    "start": "netlify functions:serve"
   }
 }
