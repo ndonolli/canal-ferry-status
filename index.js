@@ -1,4 +1,4 @@
-function isRunning(text) {
+function getRunningStatusFromText(text) {
   text = text.toLowerCase();
   // it's running
   if (text.includes('resumed') || text.includes('begun')) {
@@ -14,7 +14,7 @@ function isRunning(text) {
 }
 
 function render(text) {
-  const isRunning = isRunning(text);
+  const isRunning = getRunningStatusFromText(text);
   const status = document.getElementById('status');
   const tweet = document.getElementById('tweet');
   let msg = '';
