@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
   let response;
   const client = new twitter.Client(process.env.TOKEN);
   try {
-    const response = await client.tweets.usersIdTweets('43169410');
+    response = await client.tweets.usersIdTweets('43169410');
     // handle response
   } catch (err) {
     return {
