@@ -9,7 +9,8 @@ exports.handler = async (event, context) => {
     const tweets = tweetResponse.data;
     const latestTweet = tweets[0];
     const publishUrl = `https://publish.twitter.com/oembed?url=https://twitter.com/Canal_Ferry/status/${latestTweet.id}`;
-    response = await fetch(publishUrl);
+    const publishResponse = await fetch(publishUrl);
+    response = await publishResponse.json();
   } catch (err) {
     return {
       statusCode: err.statusCode || 500,
