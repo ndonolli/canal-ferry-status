@@ -1,11 +1,15 @@
 const twitter = require('twitter-api-sdk');
+const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
   let response;
   const client = new twitter.Client(process.env.TOKEN);
   try {
-    response = await client.tweets.usersIdTweets('43169410');
-    // handle response
+    const tweetResponse = await client.tweets.usersIdTweets('43169410');
+    const tweets = tweetResponse.data;
+    const latestTweet = tweets[0];
+    const publishUrl = `https://publish.twitter.com/oembed?url=https://twitter.com/Canal_Ferry/status/${latestTweet.id}`;
+    response = await fetch(publishUrl);
   } catch (err) {
     return {
       statusCode: err.statusCode || 500,
@@ -17,8 +21,6 @@ exports.handler = async (event, context) => {
 
   return {
     statusCode: 200,
-    body: JSON.stringify({
-      data: response,
-    }),
+    body: JSON.stringify(response),
   };
 };
