@@ -31,7 +31,6 @@ function render(text, html) {
 fetch('https://canal-ferry-status.netlify.app/.netlify/functions/api')
   .then((response) => response.json())
   .then(({ tweet, oembed }) => {
-    console.log(o);
     render(tweet.text, oembed.html);
   })
   .catch(console.log);
