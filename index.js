@@ -13,7 +13,7 @@ function getRunningStatusFromText(text) {
   return false;
 }
 
-function render(text) {
+function render(text, html) {
   const isRunning = getRunningStatusFromText(text);
   const status = document.getElementById('status');
   const tweet = document.getElementById('tweet');
@@ -25,15 +25,13 @@ function render(text) {
   }
 
   status.innerHTML = `<h1>${msg}</h1>`;
-  tweet.innerHTML = `<p>${text}</p>`;
+  tweet.innerHTML = `<p>${html}</p>`;
 }
 
 fetch('https://canal-ferry-status.netlify.app/.netlify/functions/api')
   .then((response) => response.json())
-  .then((response) => {
-    console.log(response);
-    const tweets = response.data.data;
-    const latestTweet = tweets[0].text;
-    render(latestTweet);
+  .then(({ tweet, oembed }) => {
+    console.log(o);
+    render(tweet.text, oembed.html);
   })
   .catch(console.log);
