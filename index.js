@@ -42,3 +42,12 @@ fetch('https://canal-ferry-status.netlify.app/.netlify/functions/api')
     render(tweet.text, oembed.html);
   })
   .catch(console.log);
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.prompt();
+  e.userChoice.then((choice) => {
+    if (choice.outcome === 'accepted') {
+      console.log('Thank you!');
+    }
+  });
+});
