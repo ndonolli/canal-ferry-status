@@ -29,7 +29,7 @@ function render(text, html) {
     statusText = `CLOSED`;
   }
 
-  statusContainer.classList.add(statusText);
+  statusContainer.classList.add(statusText.toLowerCase());
   statusTextElem.innerText = statusText;
 
   tweet.innerHTML = `<p>${html}</p>`;
