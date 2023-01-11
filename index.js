@@ -16,7 +16,7 @@ function getRunningStatusFromText(text) {
 function render(text, html) {
   const isRunning = getRunningStatusFromText(text);
   const statusContainer = document.getElementById('status-container');
-  const statusText = document.getElementById('status-text');
+  const statusTextElem = document.getElementById('status-text');
   const tweet = document.getElementById('tweet');
 
   statusContainer.classList.remove('closed');
@@ -30,7 +30,7 @@ function render(text, html) {
   }
 
   statusContainer.classList.add(statusText);
-  statusText.innerText = statusText;
+  statusTextElem.innerText = statusText;
 
   tweet.innerHTML = `<p>${html}</p>`;
   twttr.widgets.load(document.body);
