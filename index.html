@@ -4,15 +4,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style.css" />
     <script src="./platform.js"></script>
+    <meta name="theme-color" content="#FFFFFF" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').then(
+            function (registration) {
+              // Registration was successful
+              console.log(
+                'ServiceWorker registration successful with scope: ',
+                registration.scope
+              );
+            },
+            function (err) {
+              // registration failed :(
+              console.log('ServiceWorker registration failed: ', err);
+            }
+          );
+        });
+      }
+    </script>
   </head>
   <body>
     <div id="app">
       <h2 class="center">The ferry is</h2>
-      <div id="status-container" class="status closed">
+      <div id="status-container" class="status">
         <h1 class="center" id="status-text"></h1>
       </div>
       <h3 class="center margin-top">Latest Update:</h3>
       <div id="tweet" class="center"></div>
+      <p class="center small">
+        Questions?&nbsp;
+        <a href="mailto:ndonolli@gmail.com">Email me</a>
+      </p>
     </div>
     <script src="./index.js"></script>
   </body>
