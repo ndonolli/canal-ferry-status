@@ -9,7 +9,7 @@
 //   'index.js',
 // ];
 
-// // The install handler takes care of precaching the resources we always need.
+// // The install handler takes care of precaching the resources we always need.a
 // self.addEventListener('install', (event) => {
 //   event.waitUntil(
 //     caches
