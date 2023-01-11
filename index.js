@@ -26,6 +26,7 @@ function render(text, html) {
 
   status.innerHTML = `<h1>${msg}</h1>`;
   tweet.innerHTML = `<p>${html}</p>`;
+  twttr.widgets.load(document.body);
 }
 
 fetch('https://canal-ferry-status.netlify.app/.netlify/functions/api')
