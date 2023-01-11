@@ -15,16 +15,23 @@ function getRunningStatusFromText(text) {
 
 function render(text, html) {
   const isRunning = getRunningStatusFromText(text);
-  const status = document.getElementById('status');
+  const statusContainer = document.getElementById('status-container');
+  const statusText = document.getElementById('status-text');
   const tweet = document.getElementById('tweet');
-  let msg = '';
+
+  statusContainer.classList.remove('closed');
+  statusContainer.classList.remove('running');
+
+  let statusText = '';
   if (isRunning) {
-    msg = `The ferry is running`;
+    statusText = `RUNNING`;
   } else {
-    msg = `The ferry is closed`;
+    statusText = `CLOSED`;
   }
 
-  status.innerHTML = `<h1>${msg}</h1>`;
+  statusContainer.classList.add(statusText);
+  statusText.innerText = statusText;
+
   tweet.innerHTML = `<p>${html}</p>`;
   twttr.widgets.load(document.body);
 }
