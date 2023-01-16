@@ -39,3 +39,20 @@ h1 {
   font-size: 0.8em;
   color: #999999;
 }
+
+.alert {
+  background: #ff1b1c;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+}
+
+.alert > a {
+  color: white;
+}
+
+.icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 2em;
+}
