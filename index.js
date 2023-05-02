@@ -5,7 +5,7 @@ function getRunningStatusFromText(text) {
     return true;
   }
   // it's not
-  else if (text.includes('condluded') || text.includes('out of service')) {
+  else if (text.includes('concluded') || text.includes('out of service')) {
     return false;
   }
 
